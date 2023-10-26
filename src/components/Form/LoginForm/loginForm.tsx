@@ -1,12 +1,13 @@
-import { userContext } from "../../../providers/userContext";
+import { UserContext } from "../../../providers/userContext";
 import { StyleButtonForm } from "../../../styles/button";
-import { Header } from "../../Header/header";
+import { HeaderRegister } from "../../Header/headerRegister";
 import { StyledContainer, StyledForm } from "./style";
 import { useContext, useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { loginFormSchema } from "./schema";
 import { zodResolver } from "@hookform/resolvers/zod";
 import Input from "../Input/input";
+import { useNavigate } from "react-router-dom";
 
 export interface TLoginFormValues {
   email: string;
@@ -15,7 +16,8 @@ export interface TLoginFormValues {
 
 export const LoginForm = () => {
   //   const [loading, setLoading] = useState(false);
-  const { userLogin } = useContext(userContext);
+  const { userLogin } = useContext(UserContext);
+  const navigate = useNavigate();
 
   const {
     register,
@@ -29,7 +31,7 @@ export const LoginForm = () => {
 
   return (
     <>
-      <Header />
+      <HeaderRegister />
       <StyledContainer>
         <StyledForm onSubmit={handleSubmit(submit)}>
           <h2>Login</h2>
@@ -55,11 +57,11 @@ export const LoginForm = () => {
               Entrar
             </StyleButtonForm>
             <span>Ainda não possui conta?</span>
-            <StyleButtonForm name="register" color="gray0" className="white">
-              Cadastrar
-            </StyleButtonForm>
           </div>
         </StyledForm>
+        <StyleButtonForm onClick={() => navigate("/register")} name="register" color="gray0" className="white">
+          Cadastrar
+        </StyleButtonForm>
       </StyledContainer>
     </>
   );

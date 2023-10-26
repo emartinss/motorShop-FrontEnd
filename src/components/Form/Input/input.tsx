@@ -9,8 +9,8 @@ interface IInput {
 
 const Input = ({ id, type, placeholder, label, err, register }: IInput) => (
   <div>
-    <input type={type} id={id} placeholder={placeholder} {...register} />
     <label htmlFor={id}>{label}</label>
+    <input type={type} id={id} placeholder={placeholder} {...register} />
     {err ? <p>{err}</p> : null}
   </div>
 );

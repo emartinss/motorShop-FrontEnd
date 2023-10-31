@@ -35,7 +35,7 @@ export const UserProvider = ({ children }: IUserProvidersProps) => {
 
   const searchUser = async (id: string) => {
     const token = JSON.parse(localStorage.getItem("@motorShop:token") || "null");
-    console.log(token);
+    
     try {
       const response = await api.get(`users/${id}`, {
         headers: {

@@ -21,6 +21,7 @@ export const StyledFooter = styled.footer`
   }
 
   .button {
+    cursor:pointer;
     width: 53px;
     width: 50px;
   }

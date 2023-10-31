@@ -31,3 +31,18 @@ export interface IAdsByUser {
     image: { id: number; image_url: string }[];
   }[];
 }
+
+export interface ICreateAds {
+  brand: string;
+  model: string;
+  year: string;
+  fuel: string;
+  mileage: number;
+  color: string;
+  fipe: number;
+  price: number;
+  description: string;
+  image_url: string;
+}
+
+export interface IEditAds extends Partial<ICreateAds>{}

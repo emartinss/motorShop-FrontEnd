@@ -15,8 +15,11 @@ export const backgroundColor = getRandomColor();
 export const StyledHeaderProfile = styled.header`
   padding: 0 60px;
   border-bottom: 2px solid ${mainTheme.colors.gray6};
+
+  width: 100%;
   height: 5rem;
   max-height: 5rem;
+  background-color: ${mainTheme.colors.gray10};
 
   .container {
     display: flex;
@@ -41,6 +44,8 @@ export const StyledHeaderProfile = styled.header`
 
       border-left: 2px solid ${mainTheme.colors.gray6};
       gap: 10px;
+
+      cursor: pointer;
 
       p {
         font-size: 16px;

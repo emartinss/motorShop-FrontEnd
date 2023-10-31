@@ -6,7 +6,8 @@ export const StyledProductDetail = styled.main`
   display: flex;
   flex-direction: column;
   align-items: center;
-`;
+  background-image: linear-gradient(to bottom, ${mainTheme.colors.brand1} 20%, ${mainTheme.colors.gray8} 20%);
+  `;
 
 export const StyledContainer = styled.div`
   display: flex;
@@ -21,13 +22,11 @@ export const StyledContainer = styled.div`
     align-items: center;
     justify-content: center;
 
-    /* background-color: ${mainTheme.colors.brand1}; */
-
     width: 100%;
     height: 350px;
 
     img {
-      width: 90%;
+      width: 100%;
       height: 100%;
 
       border-radius: ${mainTheme.radius.default};

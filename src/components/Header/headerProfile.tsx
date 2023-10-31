@@ -42,11 +42,11 @@ const HeaderProfile = () => {
     <StyledHeaderProfile>
       <div className="container">
         <img className="logo" src={logo} alt="logo do site" />
-        <div className="div-profile">
-          <span>{user.name ? user.name[0].toUpperCase() : "?"}</span>
+        <div onClick={() => setModal(!modal)} className="div-profile">
+          <span >{user.name ? user.name[0].toUpperCase() : "?"}</span>
           <p>{user.name ? user.name : "usuário"}</p>
         </div>
-
+             
         {modal && (
           <StyledNavBar>
             <button onClick={() => navigate(`/users/${user.sub}`)}>Editar perfil</button>

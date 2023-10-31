@@ -52,7 +52,10 @@ export const StyledHomePage = styled.div`
   }
   .div-products {
     margin-top: 30px;
-    margin-bottom: 200px;
+    margin-bottom: 100px;
+
+    width: 90%;
+
     .users {
       display: flex;
       align-items: center;
@@ -84,8 +87,9 @@ export const StyledHomePage = styled.div`
 
     ul {
       display: flex;
-      gap: 15px;
+      gap: 30px;
 
+      height: 500px;
       padding: 30px 15px;
 
       overflow-x: auto;
@@ -93,9 +97,26 @@ export const StyledHomePage = styled.div`
       li {
         display: flex;
         flex-direction: column;
-        width: 250px;
+
+        min-width: 300px;
+        max-width: 300px;
+        height: 100%;
         gap: 10px;
         cursor: pointer;
+
+        img {
+          background-color: #d9d9d9;
+          min-width: 300px;
+          width: 300px;
+          max-width: 300px;
+
+          height: 180px;
+          max-height: 180px;
+          min-height: 180px;
+
+          border-radius: ${mainTheme.radius.default};
+        }
+
         .div-carName {
           display: flex;
           gap: 5px;
@@ -107,9 +128,19 @@ export const StyledHomePage = styled.div`
           }
         }
         .description {
-          font-weight: 400;
+          display: -webkit-box;
+          -webkit-line-clamp: 2;
+          -webkit-box-orient: vertical;
+
+          overflow: hidden;
+          text-overflow: ellipsis;
+
           color: ${mainTheme.colors.gray2};
+
+          min-height: 50px;
+
           font-size: 14px;
+          font-weight: 400;
           line-height: 24px;
         }
         .div-informations {
@@ -162,13 +193,22 @@ export const StyledHomePage = styled.div`
     }
 
     .div-products {
-      width: 65%;
       display: flex;
       justify-content: center;
+      padding: 10px;
 
       ul {
         width: 100%;
-        justify-content: space-evenly;
+        height: fit-content;
+
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        li {
+          width: calc(25% - 10px);
+          margin: 5px;
+        }
       }
     }
   }

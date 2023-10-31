@@ -2,20 +2,23 @@ import styled from "styled-components";
 import { mainTheme } from "./theme";
 
 export const StyleButtonForm = styled.button`
-  width: 315px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
   height: 48px;
 
   background-color: rgba(0, 0, 0, 0.5);
   color: #ffffff;
 
-  padding: 12px 28px;
+  padding: 16px 10px;
   gap: 10px;
   border: 2px solid ${({ name }) => (name === "register" ? mainTheme.colors.gray4 : "none")};
   border-radius: 4px;
 
   background-color: ${({ className }) => mainTheme.colors[className!] || "black"};
   color: ${({ color }) => mainTheme.colors[color!] || "black"};
-  
+
   font-size: 16px;
   font-weight: 600;
 `;
